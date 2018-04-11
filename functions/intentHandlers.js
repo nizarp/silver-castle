@@ -116,7 +116,6 @@ function getRePromptMessageFor(type) {
 
 /*Medical emergency Intent*/
 function medicalEmergencyIntent(app) {
-  console.log("medicalEmergencyIntent")
   var emergencyType = app.getArgument('emergency') || '';  
   var roomNumber = utilities.roomNumber; //Math.round(Math.random() * (utilities.maxRoomNumber - utilities.minRoomNumber) + utilities.minRoomNumber);
   var msg = roomNumber + ' - Request for ' + emergencyType;
@@ -132,10 +131,14 @@ function medicalEmergencyIntent(app) {
   let repromptText = getRePromptMessageFor(emergencyType);
   let displayText = speechText;
 
-  var ref = admin.database().ref('/requests');
-  return ref.push(req).then(() => {      
+  if(emergencyType == "") {
     utilities.askResponse(app, utilities.buildResponseToUser(repromptText, speechText, displayText));
-  });
+  } else {
+    var ref = admin.database().ref('/requests');
+    return ref.push(req).then(() => {      
+      utilities.askResponse(app, utilities.buildResponseToUser(repromptText, speechText, displayText));
+    });
+  }
 }
 
 function validateFoodType(foodType) {
