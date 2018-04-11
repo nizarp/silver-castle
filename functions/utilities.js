@@ -10,7 +10,7 @@ exports.emergencyAmbulanceMessage = "Definitely, I will request an ambulance rig
 exports.emergencyAmbulanceRePromptMessage = "Can I help you with anything else?";
 exports.lateBreakfastLunchMessage = 'Oh dear. It\s too late for breakfast. But, don\'t worry. I will get you something from our lunch menu';
 exports.lateLunchDinnerMessage = 'Oh dear. It\s too late for lunch. But, don\'t worry. I will get you something from our dinner menu';
-exports.lateDinnerBreakfastDinnerMessage = 'Oh dear. It\s too late for dinner. But, don\'t worry. I will get you something from our breakfast menu';
+exports.lateDinnerBreakfastMessage = 'Oh dear. It\s too late for dinner. But, don\'t worry. I will get you something from our breakfast menu';
 
 exports.foodOrderConfirmationMessage = [
   "Sure. I will send it right way. ",

@@ -143,20 +143,20 @@ function validateFoodType(foodType) {
   let speechText, repromptText, displayText;
   var valid = true;
 
-  if(foodType == 'breakfast' && utilities.getGreetingTime(moment().tz('Asia/Kolkata') == 'afternoon') {
+  if(foodType == 'breakfast' && utilities.getGreetingTime(moment().tz('Asia/Kolkata')) == 'afternoon') {
     speechText = displayText = utilities.lateBreakfastLunchMessage + utilities.getFurtherAssistanceMessage();
     repromptText = utilities.getFurtherAssistanceMessage();
     valid = false;
   }
 
-  if(foodType == 'lunch' && utilities.getGreetingTime(moment().tz('Asia/Kolkata') == 'evening') {
+  if(foodType == 'lunch' && utilities.getGreetingTime(moment().tz('Asia/Kolkata')) == 'evening') {
     speechText = displayText = utilities.lateLunchDinnerMessage + utilities.getFurtherAssistanceMessage();
     repromptText = utilities.getFurtherAssistanceMessage();
     valid = false;
   }
 
-  if(foodType == 'dinner' && utilities.getGreetingTime(moment().tz('Asia/Kolkata') == 'morning') {
-    speechText = displayText = utilities.lateDinnerBreakfastDinnerMessage + utilities.getFurtherAssistanceMessage();
+  if(foodType == 'dinner' && utilities.getGreetingTime(moment().tz('Asia/Kolkata')) == 'morning') {
+    speechText = displayText = utilities.lateDinnerBreakfastMessage + utilities.getFurtherAssistanceMessage();
     repromptText = utilities.getFurtherAssistanceMessage();
     valid = false;
   }
