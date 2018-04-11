@@ -21,6 +21,10 @@ exports.repeatFoodOrderConfirmationMessage = [
   "Of course. "
 ];
 
+exports.emergencyNoEntityMessage = [
+  ""
+];
+
 exports.furtherHelpPhrases = [
   'What else can I help you with today? ',
   'Is there anything else you want me to help you with? ',
@@ -81,4 +85,10 @@ exports.getGreetingTime = function(m) {
   }
   
   return g;
+}
+
+/*Get a random message from the given list*/
+exports.getRandomMessage(messages) {
+  var index = Math.floor(Math.random() * messages.length);
+  return messages[index]
 }
