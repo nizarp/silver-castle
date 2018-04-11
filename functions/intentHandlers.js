@@ -61,28 +61,22 @@ function orderFoodIntent(app) {
   return ref.orderByChild("room").equalTo(roomNumber).once('value', function(snapshot) {
 
     let speechText, repromptText, displayText;    
-    var furtherMsgIndex = Math.floor(Math.random() * utilities.furtherHelpPhrases.length);
 
     if(snapshot.val() === null) {
       
       var msgIndex = Math.floor(Math.random() * utilities.foodOrderConfirmationMessage.length);
-      speechText = '<p><s>' + utilities.foodOrderConfirmationMessage[msgIndex] 
-        + utilities.furtherHelpPhrases[furtherMsgIndex] + '</s></p>';
+      speechText = '<p><s>' + utilities.getRandomMessage(utilities.foodOrderConfirmationMessage)
+        + utilities.getRandomMessage(utilities.furtherHelpPhrases) + '</s></p>';
       
-      furtherMsgIndex = Math.floor(Math.random() * utilities.furtherHelpPhrases.length);
-      repromptText = utilities.furtherHelpPhrases[furtherMsgIndex];
-      
+      repromptText = utilities.getRandomMessage(utilities.furtherHelpPhrases);      
       displayText = utilities.firstOrderMessage;
 
     } else {
       
-      var msgIndex = Math.floor(Math.random() * utilities.repeatFoodOrderConfirmationMessage.length);
-      speechText = '<p><s>' + utilities.repeatFoodOrderConfirmationMessage[msgIndex] 
+      speechText = '<p><s>' + utilities.getRandomMessage(repeatFoodOrderConfirmationMessage)
         + utilities.furtherHelpPhrases[furtherMsgIndex] + '</s></p>';
       
-      furtherMsgIndex = Math.floor(Math.random() * utilities.furtherHelpPhrases.length);  
-      repromptText = utilities.furtherHelpPhrases[furtherMsgIndex];
-
+      repromptText = utilities.getRandomMessage(utilities.furtherHelpPhrases);
       displayText = utilities.repeatOrderMessage;
     }
 
@@ -94,7 +88,7 @@ function orderFoodIntent(app) {
 
 /*Get prompt message for a type*/
 function getPromptMessageFor(type) {
-  var message = utilities.getRandomMessage(utilities.emergencyNoEntityMessage)
+  var message = utilities.getRandomMessage(utilities.emergencyNoEntityMessage);
   if (type == "doctor") {
       message = utilities.emergencyDoctorMessage;
   } else if (type == "ambulance") {
@@ -105,13 +99,13 @@ function getPromptMessageFor(type) {
 
 /*Get reprompt message for a type*/
 function getRePromptMessageFor(type) {
-  var message = utilities.getRandomMessage(utilities.emergencyNoEntityMessage)
+  var message = utilities.getRandomMessage(utilities.emergencyNoEntityMessage);
   if (type == "doctor") {
       message = utilities.emergencyDoctorRePromptMessage;
   } else if (type == "ambulance"){
       message = utilities.emergencyAmbulanceRePromptMessage;
   }
-  return message
+  return message;
 }
 
 /*Medical emergency Intent*/
@@ -147,19 +141,22 @@ function validateFoodType(app, foodType) {
   var valid = true;
 
   if(foodType == 'breakfast' && utilities.getGreetingTime(moment().tz('Asia/Kolkata')) == 'afternoon') {
-    speechText = displayText = utilities.lateBreakfastLunchMessage + utilities.getRandomMessage(utilities.furtherHelpPhrases);
+    speechText = displayText = utilities.lateBreakfastLunchMessage 
+      + utilities.getRandomMessage(utilities.furtherHelpPhrases);
     repromptText = utilities.getRandomMessage(utilities.furtherHelpPhrases);
     valid = false;
   }
 
   if(foodType == 'lunch' && utilities.getGreetingTime(moment().tz('Asia/Kolkata')) == 'evening') {
-    speechText = displayText = utilities.lateLunchDinnerMessage + utilities.getRandomMessage(utilities.furtherHelpPhrases);
+    speechText = displayText = utilities.lateLunchDinnerMessage 
+      + utilities.getRandomMessage(utilities.furtherHelpPhrases);
     repromptText = utilities.getRandomMessage(utilities.furtherHelpPhrases);
     valid = false;
   }
 
   if(foodType == 'dinner' && utilities.getGreetingTime(moment().tz('Asia/Kolkata')) == 'morning') {
-    speechText = displayText = utilities.lateDinnerBreakfastMessage + utilities.getRandomMessage(utilities.furtherHelpPhrases);
+    speechText = displayText = utilities.lateDinnerBreakfastMessage 
+      + utilities.getRandomMessage(utilities.furtherHelpPhrases);
     repromptText = utilities.getRandomMessage(utilities.furtherHelpPhrases);
     valid = false;
   }
