@@ -17,6 +17,7 @@ function welcomeIntent(app) {
   let speechText, repromptText, displayText;
   var room = utilities.roomNumber;
 
+  var ref = admin.database().ref('/requests');
   return ref.orderByChild("room").equalTo(roomNumber).once('value', function(snapshot) {
     if(snapshot.val() === null) {
       speechText = repromptText = '<p><s> Good ' + utilities.getGreetingTime(moment()) + ', ' 
