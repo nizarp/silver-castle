@@ -2,7 +2,7 @@
 
 exports.welcomeMessage = "Welcome to Silver Castle. "; 
 exports.selfIntro = "This is your customer relations manager. ";
-exports.welcomeMessageReturn = "Welcome back to Palace Hotel. ";
+exports.welcomeMessageReturn = "Welcome back to Silver Castle. ";
 exports.HelpMessage = "How can I help you today? ";
 exports.emergencyDoctorMessage = "Definitely, I will send a doctor at once. Do you need anything else?";
 exports.emergencyDoctorRePromptMessage = "Can I help you with anything else?";
@@ -10,7 +10,9 @@ exports.emergencyAmbulanceMessage = "Definitely, I will request an ambulance rig
 exports.emergencyAmbulanceRePromptMessage = "Can I help you with anything else?";
 exports.foodOrderConfirmationMessage = [
   "Sure. I will send it right way. ",
-  "Alright. You will get it in ten minutes. "
+  "Alright. You will get it in ten minutes. ",
+  "Why not. I will send it right away. ",
+  "Okay. Sending it now."
 ];
 exports.repeatFoodOrderConfirmationMessage = [
   "Sure. ",
