@@ -27,11 +27,11 @@ exports.furtherHelpPhrases = [
 
 exports.minRoomNumber = 100;
 exports.maxRoomNumber = 900;
-exports.roomNumber = 303;
-exports.customers = [
-  303: "Mr. James ",
-  304: "Mrs. Susan "
-];
+exports.roomNumber = "s303";
+exports.customers = {
+  s303: "Mr. James ",
+  s304: "Mrs. Susan "
+};
 
 exports.dbUrl = 'https://us-central1-westin-5b28e.cloudfunctions.net/addRequest';
 

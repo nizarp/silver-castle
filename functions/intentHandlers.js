@@ -27,7 +27,7 @@ function welcomeIntent(app) {
       displayText = speechText;
     }  
     utilities.askResponse(app, utilities.buildResponseToUser(repromptText, speechText, displayText));
-  }
+  });
 }
 
 function defaultIntent(app) {
@@ -93,7 +93,7 @@ function orderFoodIntent(app) {
 /*Get prompt message for a type*/
 function getPromptMessageFor(type) {
   var message = ""
-  if emergencyType == "doctor" {
+  if (emergencyType == "doctor") {
       message = utilities.emergencyDoctorMessage;
   } else {
       message = utilities.emergencyAmbulanceMessage;
@@ -104,7 +104,7 @@ function getPromptMessageFor(type) {
 /*Get reprompt message for a type*/
 function getRePromptMessageFor(type) {
   var message = ""
-  if emergencyType == "doctor" {
+  if (emergencyType == "doctor") {
       message = utilities.emergencyDoctorRePromptMessage;
   } else {
       message = utilities.emergencyAmbulanceRePromptMessage;
