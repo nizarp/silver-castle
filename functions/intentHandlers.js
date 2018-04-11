@@ -45,6 +45,7 @@ function defaultIntent(app) {
 function orderFoodIntent(app) {
 
   var foodType = app.getArgument('foodItems') || '';  
+  validateFoodType(foodType);
   var roomNumber = utilities.roomNumber; //Math.round(Math.random() * (utilities.maxRoomNumber - utilities.minRoomNumber) + utilities.minRoomNumber);
   var msg = roomNumber + ' - Request for ' + foodType;
 
@@ -62,7 +63,7 @@ function orderFoodIntent(app) {
     let speechText, repromptText, displayText;    
     var furtherMsgIndex = Math.floor(Math.random() * utilities.furtherHelpPhrases.length);
 
-    if(snapshot.val() === null) {        
+    if(snapshot.val() === null) {
       
       var msgIndex = Math.floor(Math.random() * utilities.foodOrderConfirmationMessage.length);
       speechText = '<p><s>' + utilities.foodOrderConfirmationMessage[msgIndex] 
@@ -135,6 +136,35 @@ function medicalEmergencyIntent(app) {
   return ref.push(req).then(() => {      
     utilities.askResponse(app, utilities.buildResponseToUser(repromptText, speechText, displayText));
   });
+}
+
+function validateFoodType(foodType) {
+  
+  let speechText, repromptText, displayText;
+  var valid = true;
+
+  if(foodType == 'breakfast' && utilities.getGreetingTime(moment().tz('Asia/Kolkata') == 'afternoon') {
+    speechText = displayText = utilities.lateBreakfastLunchMessage + utilities.getFurtherAssistanceMessage();
+    repromptText = utilities.getFurtherAssistanceMessage();
+    valid = false;
+  }
+
+  if(foodType == 'lunch' && utilities.getGreetingTime(moment().tz('Asia/Kolkata') == 'evening') {
+    speechText = displayText = utilities.lateLunchDinnerMessage + utilities.getFurtherAssistanceMessage();
+    repromptText = utilities.getFurtherAssistanceMessage();
+    valid = false;
+  }
+
+  if(foodType == 'dinner' && utilities.getGreetingTime(moment().tz('Asia/Kolkata') == 'morning') {
+    speechText = displayText = utilities.lateDinnerBreakfastDinnerMessage + utilities.getFurtherAssistanceMessage();
+    repromptText = utilities.getFurtherAssistanceMessage();
+    valid = false;
+  }
+  if(!valid) {
+    utilities.askResponse(app, utilities.buildResponseToUser(repromptText, speechText, displayText));
+  } 
+
+  return;
 }
 
 
