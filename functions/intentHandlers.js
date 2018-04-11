@@ -21,10 +21,10 @@ function welcomeIntent(app) {
     if(snapshot.val() === null) {
       speechText = repromptText = '<p><s> Good ' + utilities.getGreetingTime(moment()) + ', ' 
         + utilities.customers[room] + utilities.selfIntro + utilities.HelpMessage + '</s></p>';
-      displayText = utilities.welcomeMessage;
+      displayText = speechText;
     } else {
-      speechText = repromptText = '<p><s>' + utilities.welcomeMessageReturn + '</s></p>';
-      displayText = utilities.welcomeMessage;
+      speechText = repromptText = '<p><s>' + utilities.welcomeMessageReturn + utilities.HelpMessage + '</s></p>';
+      displayText = speechText;
     }  
     utilities.askResponse(app, utilities.buildResponseToUser(repromptText, speechText, displayText));
   }
@@ -58,12 +58,29 @@ function orderFoodIntent(app) {
   
   return ref.orderByChild("room").equalTo(roomNumber).once('value', function(snapshot) {
 
-    let speechText, repromptText, displayText;
+    let speechText, repromptText, displayText;    
+    var furtherMsgIndex = Math.floor(Math.random() * utilities.furtherHelpPhrases.length);
+
     if(snapshot.val() === null) {        
-      speechText = repromptText = '<p><s>' + utilities.firstOrderMessage + '</s></p>';
+      
+      var msgIndex = Math.floor(Math.random() * utilities.foodOrderConfirmationMessage.length);
+      speechText = '<p><s>' + utilities.foodOrderConfirmationMessage[msgIndex] 
+        + utilities.furtherHelpPhrases[furtherMsgIndex] + '</s></p>';
+      
+      furtherMsgIndex = Math.floor(Math.random() * utilities.furtherHelpPhrases.length);
+      repromptText = utilities.furtherHelpPhrases[furtherMsgIndex];
+      
       displayText = utilities.firstOrderMessage;
+
     } else {
-      speechText = repromptText = '<p><s>' + utilities.repeatOrderMessage + '</s></p>';
+      
+      var msgIndex = Math.floor(Math.random() * utilities.repeatFoodOrderConfirmationMessage.length);
+      speechText = '<p><s>' + utilities.repeatFoodOrderConfirmationMessage[msgIndex] 
+        + utilities.furtherHelpPhrases[furtherMsgIndex] + '</s></p>';
+      
+      furtherMsgIndex = Math.floor(Math.random() * utilities.furtherHelpPhrases.length);  
+      repromptText = utilities.furtherHelpPhrases[furtherMsgIndex];
+
       displayText = utilities.repeatOrderMessage;
     }
 
