@@ -6,11 +6,11 @@ exports.welcomeMessageReturn = "Welcome back to Silver Castle. ";
 exports.HelpMessage = "How can I help you today? ";
 exports.emergencyDoctorMessage = "Definitely, I will send a doctor at once. Do you need anything else?";
 exports.emergencyDoctorRePromptMessage = "Can I help you with anything else?";
-exports.emergencyAmbulanceMessage = "Definitely, I will request an ambulance right away. Do you need anything else?";
-exports.emergencyAmbulanceRePromptMessage = "Can I help you with anything else?";
-exports.lateBreakfastLunchMessage = 'Oh dear. It\s too late for breakfast. But, don\'t worry. I will get you something from our lunch menu';
-exports.lateLunchDinnerMessage = 'Oh dear. It\s too late for lunch. But, don\'t worry. I will get you something from our dinner menu';
-exports.lateDinnerBreakfastMessage = 'Oh dear. It\s too late for dinner. But, don\'t worry. I will get you something from our breakfast menu';
+exports.emergencyAmbulanceMessage = "Definitely, I will request an ambulance right away. Do you need anything else? ";
+exports.emergencyAmbulanceRePromptMessage = "Can I help you with anything else? ";
+exports.lateBreakfastLunchMessage = 'Oh dear. It\s too late for breakfast. But, don\'t worry. I will get you something from our lunch menu. ';
+exports.lateLunchDinnerMessage = 'Oh dear. It\s too late for lunch. But, don\'t worry. I will get you something from our dinner menu. ';
+exports.lateDinnerBreakfastMessage = 'Oh dear. It\s too late for dinner. But, don\'t worry. I will get you something from our breakfast menu. ';
 
 exports.foodOrderConfirmationMessage = [
   "Sure. I will send it right way. ",
@@ -26,7 +26,7 @@ exports.repeatFoodOrderConfirmationMessage = [
 ];
 
 exports.emergencyNoEntityMessage = [
-  ""
+  "Sorry. I didn't catch that. Could you please repeat?"
 ];
 
 exports.furtherHelpPhrases = [
