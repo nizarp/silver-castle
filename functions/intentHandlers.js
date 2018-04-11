@@ -45,7 +45,7 @@ function defaultIntent(app) {
 function orderFoodIntent(app) {
 
   var foodType = app.getArgument('foodItems') || '';  
-  validateFoodType(foodType);
+  validateFoodType(app, foodType);
   var roomNumber = utilities.roomNumber; //Math.round(Math.random() * (utilities.maxRoomNumber - utilities.minRoomNumber) + utilities.minRoomNumber);
   var msg = roomNumber + ' - Request for ' + foodType;
 
@@ -138,7 +138,7 @@ function medicalEmergencyIntent(app) {
   });
 }
 
-function validateFoodType(foodType) {
+function validateFoodType(app, foodType) {
   
   let speechText, repromptText, displayText;
   var valid = true;
