@@ -94,10 +94,10 @@ function orderFoodIntent(app) {
 
 /*Get prompt message for a type*/
 function getPromptMessageFor(type) {
-  var message = ""
+  var message = utilities.getRandomMessage(utilities.emergencyNoEntityMessage)
   if (type == "doctor") {
       message = utilities.emergencyDoctorMessage;
-  } else {
+  } else if (type == "ambulance") {
       message = utilities.emergencyAmbulanceMessage;
   }
   return message
@@ -105,10 +105,10 @@ function getPromptMessageFor(type) {
 
 /*Get reprompt message for a type*/
 function getRePromptMessageFor(type) {
-  var message = ""
+  var message = utilities.getRandomMessage(utilities.emergencyNoEntityMessage)
   if (type == "doctor") {
       message = utilities.emergencyDoctorRePromptMessage;
-  } else {
+  } else if (type == "ambulance"){
       message = utilities.emergencyAmbulanceRePromptMessage;
   }
   return message

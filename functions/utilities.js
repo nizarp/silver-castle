@@ -25,6 +25,10 @@ exports.repeatFoodOrderConfirmationMessage = [
   "Of course. "
 ];
 
+exports.emergencyNoEntityMessage = [
+  ""
+];
+
 exports.furtherHelpPhrases = [
   'What else can I help you with today? ',
   'Is there anything else you want me to help you with? ',
@@ -90,4 +94,10 @@ exports.getGreetingTime = function(m) {
 exports.getFurtherAssistanceMessage = function() {
   var furtherMsgIndex = Math.floor(Math.random() * furtherHelpPhrases.length);
   return utilities.furtherHelpPhrases[furtherMsgIndex];
+}
+
+/*Get a random message from the given list*/
+exports.getRandomMessage(messages) {
+  var index = Math.floor(Math.random() * messages.length);
+  return messages[index]
 }
