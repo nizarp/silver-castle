@@ -1,24 +1,32 @@
 'use strict';
 
-exports.welcomeMessage = "Welcome to Silver Castle."; 
-exports.selfIntro = "This is your customer relations manager.";
-exports.welcomeMessageReturn = "Welcome back to Palace Hotel.";
-exports.HelpMessage = "How can I help you today?";
-exports.firstOrderMessage = "";
-exports.repeatOrderMessage = "";
+exports.welcomeMessage = "Welcome to Silver Castle. "; 
+exports.selfIntro = "This is your customer relations manager. ";
+exports.welcomeMessageReturn = "Welcome back to Palace Hotel. ";
+exports.HelpMessage = "How can I help you today? ";
+exports.foodOrderConfirmationMessage = [
+  "Sure. I will send it right way. ",
+  "Alright. You will get it in ten minutes. "
+];
+exports.repeatFoodOrderConfirmationMessage = [
+  "Sure. ",
+  "Alright. ",
+  "Okay. ",
+  "Of course. "
+];
 
 exports.furtherHelpPhrases = [
-  'What else can I help you with today?',
-  'Is there anything else you want me to help you with?',
-  'Anything else you need?'
+  'What else can I help you with today? ',
+  'Is there anything else you want me to help you with? ',
+  'Anything else you need? '
 ];
 
 exports.minRoomNumber = 100;
 exports.maxRoomNumber = 900;
 exports.roomNumber = 303;
 exports.customers = [
-  303: "Mr. James",
-  304: "Mrs. Susan"
+  303: "Mr. James ",
+  304: "Mrs. Susan "
 ];
 
 exports.dbUrl = 'https://us-central1-westin-5b28e.cloudfunctions.net/addRequest';
