@@ -3,7 +3,7 @@
 const utilities = require('./utilities');
 const https = require('https');
 const admin = require('firebase-admin');
-const moment = require('moment')
+const moment = require('moment-timezone')
 
 const actionMap = new Map();
 admin.initializeApp({databaseURL: "https://palacehotel-5e988.firebaseio.com"});
@@ -20,7 +20,7 @@ function welcomeIntent(app) {
   var ref = admin.database().ref('/requests');
   return ref.orderByChild("room").equalTo(room).once('value', function(snapshot) {
     if(snapshot.val() === null) {
-      speechText = repromptText = '<p><s> Good ' + utilities.getGreetingTime(moment()) + ', ' 
+      speechText = repromptText = '<p><s> Good ' + utilities.getGreetingTime(moment().tz('Asia/Kolkata')) + ', ' 
         + utilities.customers[room] + '.' + utilities.selfIntro + utilities.HelpMessage + '</s></p>';
       displayText = speechText;
     } else {
