@@ -94,7 +94,7 @@ function orderFoodIntent(app) {
 /*Get prompt message for a type*/
 function getPromptMessageFor(type) {
   var message = ""
-  if (emergencyType == "doctor") {
+  if (type == "doctor") {
       message = utilities.emergencyDoctorMessage;
   } else {
       message = utilities.emergencyAmbulanceMessage;
@@ -105,7 +105,7 @@ function getPromptMessageFor(type) {
 /*Get reprompt message for a type*/
 function getRePromptMessageFor(type) {
   var message = ""
-  if (emergencyType == "doctor") {
+  if (type == "doctor") {
       message = utilities.emergencyDoctorRePromptMessage;
   } else {
       message = utilities.emergencyAmbulanceRePromptMessage;
@@ -115,6 +115,7 @@ function getRePromptMessageFor(type) {
 
 /*Medical emergency Intent*/
 function medicalEmergencyIntent(app) {
+  console.log("medicalEmergencyIntent")
   var emergencyType = app.getArgument('emergency') || '';  
   var roomNumber = utilities.roomNumber; //Math.round(Math.random() * (utilities.maxRoomNumber - utilities.minRoomNumber) + utilities.minRoomNumber);
   var msg = roomNumber + ' - Request for ' + emergencyType;
