@@ -144,20 +144,20 @@ function validateFoodType(foodType) {
   var valid = true;
 
   if(foodType == 'breakfast' && utilities.getGreetingTime(moment().tz('Asia/Kolkata')) == 'afternoon') {
-    speechText = displayText = utilities.lateBreakfastLunchMessage + utilities.getFurtherAssistanceMessage();
-    repromptText = utilities.getFurtherAssistanceMessage();
+    speechText = displayText = utilities.lateBreakfastLunchMessage + utilities.getRandomMessage(utilities.furtherHelpPhrases);
+    repromptText = utilities.getRandomMessage(utilities.furtherHelpPhrases);
     valid = false;
   }
 
   if(foodType == 'lunch' && utilities.getGreetingTime(moment().tz('Asia/Kolkata')) == 'evening') {
-    speechText = displayText = utilities.lateLunchDinnerMessage + utilities.getFurtherAssistanceMessage();
-    repromptText = utilities.getFurtherAssistanceMessage();
+    speechText = displayText = utilities.lateLunchDinnerMessage + utilities.getRandomMessage(utilities.furtherHelpPhrases);
+    repromptText = utilities.getRandomMessage(utilities.furtherHelpPhrases);
     valid = false;
   }
 
   if(foodType == 'dinner' && utilities.getGreetingTime(moment().tz('Asia/Kolkata')) == 'morning') {
-    speechText = displayText = utilities.lateDinnerBreakfastMessage + utilities.getFurtherAssistanceMessage();
-    repromptText = utilities.getFurtherAssistanceMessage();
+    speechText = displayText = utilities.lateDinnerBreakfastMessage + utilities.getRandomMessage(utilities.furtherHelpPhrases);
+    repromptText = utilities.getRandomMessage(utilities.furtherHelpPhrases);
     valid = false;
   }
   if(!valid) {
@@ -166,6 +166,5 @@ function validateFoodType(foodType) {
 
   return;
 }
-
 
 module.exports = actionMap;

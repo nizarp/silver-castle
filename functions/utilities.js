@@ -91,13 +91,8 @@ exports.getGreetingTime = function(m) {
   return g;
 };
 
-exports.getFurtherAssistanceMessage = function() {
-  var furtherMsgIndex = Math.floor(Math.random() * furtherHelpPhrases.length);
-  return utilities.furtherHelpPhrases[furtherMsgIndex];
-}
-
 /*Get a random message from the given list*/
-exports.getRandomMessage(messages) {
+exports.getRandomMessage = function(messages) {
   var index = Math.floor(Math.random() * messages.length);
   return messages[index]
-}
+};
