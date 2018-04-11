@@ -11,6 +11,7 @@ admin.initializeApp({databaseURL: "https://palacehotel-5e988.firebaseio.com"});
 actionMap.set('input.welcome', welcomeIntent);
 actionMap.set('default', defaultIntent);
 actionMap.set('orderFoodIntent', orderFoodIntent);
+actionMap.set('medicalEmergencyIntent', medicalEmergencyIntent);
 
 function welcomeIntent(app) {
   let speechText, repromptText, displayText;
@@ -70,7 +71,52 @@ function orderFoodIntent(app) {
       utilities.askResponse(app, utilities.buildResponseToUser(repromptText, speechText, displayText));
     });
   });
-
 }
+
+/*Get prompt message for a type*/
+function getPromptMessageFor(type) {
+  var message = ""
+  if emergencyType == "doctor" {
+      message = utilities.emergencyDoctorMessage;
+  } else {
+      message = utilities.emergencyAmbulanceMessage;
+  }
+  return message
+}
+
+/*Get reprompt message for a type*/
+function getRePromptMessageFor(type) {
+  var message = ""
+  if emergencyType == "doctor" {
+      message = utilities.emergencyDoctorRePromptMessage;
+  } else {
+      message = utilities.emergencyAmbulanceRePromptMessage;
+  }
+  return message
+}
+
+/*Medical emergency Intent*/
+function medicalEmergencyIntent(app) {
+  var emergencyType = app.getArgument('emergency') || '';  
+  var roomNumber = utilities.roomNumber; //Math.round(Math.random() * (utilities.maxRoomNumber - utilities.minRoomNumber) + utilities.minRoomNumber);
+  var msg = roomNumber + ' - Request for ' + emergencyType;
+
+  var req = {
+    "room": roomNumber,
+    "requestType": emergencyType,
+    "msg": msg,
+    "date": moment().format('YYYY-MM-DD')
+  };
+
+  let speechText = '<p><s>' + getPromptMessageFor(emergencyType) + '</s></p>';
+  let repromptText = getRePromptMessageFor(emergencyType);
+  let displayText = speechText;
+
+  var ref = admin.database().ref('/requests');
+  return ref.push(req).then(() => {      
+    utilities.askResponse(app, utilities.buildResponseToUser(repromptText, speechText, displayText));
+  });
+}
+
 
 module.exports = actionMap;

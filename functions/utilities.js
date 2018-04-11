@@ -6,6 +6,11 @@ exports.welcomeMessageReturn = "Welcome back to Palace Hotel.";
 exports.HelpMessage = "How can I help you today?";
 exports.firstOrderMessage = "";
 exports.repeatOrderMessage = "";
+exports.emergencyDoctorMessage = "Definitely, I will send a doctor at once. Do you need anything else?";
+exports.emergencyDoctorRePromptMessage = "Can I help you with anything else?";
+exports.emergencyAmbulanceMessage = "Definitely, I will request an ambulance right away. Do you need anything else?";
+exports.emergencyAmbulanceRePromptMessage = "Can I help you with anything else?";
+
 
 exports.furtherHelpPhrases = [
   'What else can I help you with today?',
