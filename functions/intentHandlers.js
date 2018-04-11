@@ -33,17 +33,12 @@ function welcomeIntent(app) {
 
 function defaultIntent(app) {
   let speechText, repromptText, displayText;
-  speechText = repromptText = '<p><s>Would you like to hear about all Restaurants nearby?</s></p>';
-  displayText = 'Would you like to hear about all Restaurants nearby?';
-  let index = Math.floor(Math.random() * (HOTEL_LIST.hotels.length - 1)) + 1;
-  app.setContext('non_aha_restuarant_context', 1, {
-    index: index
-  });
+  speechText = displayText = '<p><s>' + utilities.emergencyNoEntityMessage + '</s></p>';
+  repromptText = utilities.helpDescription;
   utilities.askResponse(app, utilities.buildResponseToUser(repromptText, speechText, displayText));
 }
 
 function orderFoodIntent(app) {
-
   var foodType = app.getArgument('foodItems') || '';  
   validateFoodType(app, foodType);
   var roomNumber = utilities.roomNumber; //Math.round(Math.random() * (utilities.maxRoomNumber - utilities.minRoomNumber) + utilities.minRoomNumber);

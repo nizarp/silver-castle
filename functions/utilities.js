@@ -8,9 +8,10 @@ exports.emergencyDoctorMessage = "Definitely, I will send a doctor at once. Do y
 exports.emergencyDoctorRePromptMessage = "Can I help you with anything else?";
 exports.emergencyAmbulanceMessage = "Definitely, I will request an ambulance right away. Do you need anything else?";
 exports.emergencyAmbulanceRePromptMessage = "Can I help you with anything else?";
-exports.lateBreakfastLunchMessage = 'Oh dear. It\s too late for breakfast. But, don\'t worry. I will get you something from our lunch menu';
-exports.lateLunchDinnerMessage = 'Oh dear. It\s too late for lunch. But, don\'t worry. I will get you something from our dinner menu';
-exports.lateDinnerBreakfastMessage = 'Oh dear. It\s too late for dinner. But, don\'t worry. I will get you something from our breakfast menu';
+exports.lateBreakfastLunchMessage = 'Oh dear. It\s too late for breakfast. But, don\'t worry. I will get you the lunch now';
+exports.lateLunchDinnerMessage = 'Oh dear. It\s too late for lunch. But, don\'t worry. I will get you the dinner now';
+exports.lateDinnerBreakfastMessage = 'Oh dear. It\s too late for dinner. But, don\'t worry. I will get you the breakfast now';
+exports.helpDescription = 'I can help you order services like food and beverages, daily necessities, room services and get you help during any emergency situation. I can even answer your general queries.';
 
 exports.foodOrderConfirmationMessage = [
   "Sure. I will send it right way. ",
