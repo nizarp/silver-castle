@@ -38,11 +38,7 @@ function cancelIntent(app) {
   speechText = 'Goodbye ' + utilities.customers[room] + '.' + utilities.cancelMessage;
   displayText = speechText;
   repromptText = '';
-  //utilities.tellResponse(app, utilities.buildResponseToUser(repromptText, speechText, displayText));
-  app.tell({
-    speech: speechText,
-    displayText: speechText
-  });
+  utilities.tellResponse(app, utilities.buildResponseToUser(repromptText, speechText, displayText));
 }
 
 function defaultIntent(app) {
