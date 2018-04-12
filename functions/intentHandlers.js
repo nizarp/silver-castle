@@ -35,7 +35,7 @@ function welcomeIntent(app) {
 function cancelIntent(app) {
   let speechText, repromptText, displayText;
   var room = utilities.roomNumber;
-  speechText = 'Goodbye ' + utilities.customers[room] + '.' + utilities.cancelMessage;
+  speechText = 'Goodbye ' + utilities.customers[room] + '. ' + utilities.cancelMessage;
   displayText = speechText;
   repromptText = '';
   utilities.tellResponse(app, utilities.buildResponseToUser(repromptText, speechText, displayText));
