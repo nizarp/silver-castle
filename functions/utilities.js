@@ -15,7 +15,7 @@ exports.cancelMessage = 'I will be here if you need anything. ';
 
 exports.foodOrderConfirmationMessage = [
   "Why not. I will send it right way. ",
-  "Alright. You will get it in ten minutes. ",
+  "Alright. You will get it in few minutes. ",
   "Sure. I will send it. ",
   "Okay. Sending it now. "
 ];
