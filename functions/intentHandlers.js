@@ -34,7 +34,7 @@ function welcomeIntent(app) {
 
 function cancelIntent(app) {
   let speechText, repromptText, displayText;
-  speechText = '<p><s> Goodbye ' + utilities.customers[room] + '.' + utilities.cancelMessage '</s></p>';
+  speechText = '<p><s> Goodbye ' + utilities.customers[room] + '.' + utilities.cancelMessage + '</s></p>';
   displayText = speechText;
   repromptText = '';
   utilities.tellResponse(app, utilities.buildResponseToUser(repromptText, speechText, displayText));
