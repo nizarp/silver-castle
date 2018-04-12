@@ -9,7 +9,7 @@ const actionMap = new Map();
 admin.initializeApp({databaseURL: "https://palacehotel-5e988.firebaseio.com"});
 
 actionMap.set('input.welcome', welcomeIntent);
-actionMap.set('default', defaultIntent);
+actionMap.set('input.unknown', defaultIntent);
 actionMap.set('orderFoodIntent', orderFoodIntent);
 actionMap.set('medicalEmergencyIntent', medicalEmergencyIntent);
 
