@@ -1,7 +1,6 @@
 'use strict';
 
 exports.welcomeMessage = "Welcome to Silver Castle. "; 
-exports.selfIntro = "This is your customer relations manager. ";
 exports.welcomeMessageReturn = "Welcome back to Silver Castle. ";
 exports.HelpMessage = "How can I help you today? ";
 exports.emergencyDoctorMessage = "Definitely, I will send a doctor at once. Do you need anything else? ";
