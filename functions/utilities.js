@@ -15,10 +15,10 @@ exports.helpDescription = 'I can help you order services like food and beverages
 exports.cancelMessage = 'I will be right here if you need anything. ';
 
 exports.foodOrderConfirmationMessage = [
-  "Sure. I will send it right way. ",
+  "Why not. I will send it right way. ",
   "Alright. You will get it in ten minutes. ",
-  "Why not. I will send it right away. ",
-  "Okay. Sending it now."
+  "Sure. I will send it. ",
+  "Okay. Sending it now. "
 ];
 
 exports.emergencyNoEntityMessage = [
