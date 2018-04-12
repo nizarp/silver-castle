@@ -19,12 +19,6 @@ exports.foodOrderConfirmationMessage = [
   "Why not. I will send it right away. ",
   "Okay. Sending it now."
 ];
-exports.repeatFoodOrderConfirmationMessage = [
-  "Sure. ",
-  "Alright. ",
-  "Okay. ",
-  "Of course. "
-];
 
 exports.emergencyNoEntityMessage = [
   "Sorry. I didn't catch that. Could you please repeat?"
