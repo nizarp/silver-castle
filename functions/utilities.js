@@ -11,7 +11,7 @@ exports.lateBreakfastLunchMessage = 'Oh dear. It\'s too late for breakfast. But,
 exports.lateLunchDinnerMessage = 'Oh dear. It\'s too late for lunch. But, don\'t worry. I will get you the dinner now. ';
 exports.lateDinnerBreakfastMessage = 'Oh dear. It\'s too late for dinner. But, don\'t worry. I will get you the breakfast now. ';
 exports.helpDescription = 'I can help you order services like food and beverages, daily necessities, room services and get you help during any emergency situation. I can even answer your general queries. ';
-exports.cancelMessage = 'I will be right here if you need anything. ';
+exports.cancelMessage = 'I will be here if you need anything. ';
 
 exports.foodOrderConfirmationMessage = [
   "Why not. I will send it right way. ",
