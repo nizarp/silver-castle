@@ -25,7 +25,7 @@ exports.emergencyNoEntityMessage = [
 ];
 
 exports.furtherHelpPhrases = [
-  'What else can I help you with today? ',
+  'What else can I help you with? ',
   'Is there anything else you want me to help you with? ',
   'Anything else you need? '
 ];
