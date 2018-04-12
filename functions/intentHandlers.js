@@ -69,7 +69,7 @@ function orderFoodIntent(app) {
     } else {
       
       speechText = '<p><s>' + utilities.getRandomMessage(utilities.foodOrderConfirmationMessage)
-        + utilities.furtherHelpPhrases[furtherMsgIndex] + '</s></p>';
+        + utilities.getRandomMessage(utilities.furtherHelpPhrases) + '</s></p>';
       
       repromptText = utilities.getRandomMessage(utilities.furtherHelpPhrases);
       displayText = utilities.repeatOrderMessage;
