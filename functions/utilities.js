@@ -4,14 +4,15 @@ exports.welcomeMessage = "Welcome to Silver Castle. ";
 exports.selfIntro = "This is your customer relations manager. ";
 exports.welcomeMessageReturn = "Welcome back to Silver Castle. ";
 exports.HelpMessage = "How can I help you today? ";
-exports.emergencyDoctorMessage = "Definitely, I will send a doctor at once. Do you need anything else?";
-exports.emergencyDoctorRePromptMessage = "Can I help you with anything else?";
-exports.emergencyAmbulanceMessage = "Definitely, I will request an ambulance right away. Do you need anything else?";
-exports.emergencyAmbulanceRePromptMessage = "Can I help you with anything else?";
-exports.lateBreakfastLunchMessage = 'Oh dear. It\s too late for breakfast. But, don\'t worry. I will get you the lunch now';
-exports.lateLunchDinnerMessage = 'Oh dear. It\s too late for lunch. But, don\'t worry. I will get you the dinner now';
-exports.lateDinnerBreakfastMessage = 'Oh dear. It\s too late for dinner. But, don\'t worry. I will get you the breakfast now';
-exports.helpDescription = 'I can help you order services like food and beverages, daily necessities, room services and get you help during any emergency situation. I can even answer your general queries.';
+exports.emergencyDoctorMessage = "Definitely, I will send a doctor at once. Do you need anything else? ";
+exports.emergencyDoctorRePromptMessage = "Can I help you with anything else? ";
+exports.emergencyAmbulanceMessage = "Don't worry, I will request an ambulance right away. Do you need anything else? ";
+exports.emergencyAmbulanceRePromptMessage = "Can I help you with anything else? ";
+exports.lateBreakfastLunchMessage = 'Oh dear. It\'s too late for breakfast. But, don\'t worry. I will get you the lunch now. ';
+exports.lateLunchDinnerMessage = 'Oh dear. It\'s too late for lunch. But, don\'t worry. I will get you the dinner now. ';
+exports.lateDinnerBreakfastMessage = 'Oh dear. It\'s too late for dinner. But, don\'t worry. I will get you the breakfast now. ';
+exports.helpDescription = 'I can help you order services like food and beverages, daily necessities, room services and get you help during any emergency situation. I can even answer your general queries. ';
+exports.cancelMessage = 'I will be right here if you need anything. ';
 
 exports.foodOrderConfirmationMessage = [
   "Sure. I will send it right way. ",

@@ -12,6 +12,7 @@ actionMap.set('input.welcome', welcomeIntent);
 actionMap.set('input.unknown', defaultIntent);
 actionMap.set('orderFoodIntent', orderFoodIntent);
 actionMap.set('medicalEmergencyIntent', medicalEmergencyIntent);
+actionMap.set('cancelIntent', cancelIntent);
 
 function welcomeIntent(app) {
   let speechText, repromptText, displayText;
@@ -29,6 +30,14 @@ function welcomeIntent(app) {
     }  
     utilities.askResponse(app, utilities.buildResponseToUser(repromptText, speechText, displayText));
   });
+}
+
+function cancelIntent(app) {
+  let speechText, repromptText, displayText;
+  speechText = '<p><s> Goodbye ' + utilities.customers[room] + '.' + utilities.cancelMessage '</s></p>';
+  displayText = speechText;
+  repromptText = '';
+  utilities.tellResponse(app, utilities.buildResponseToUser(repromptText, speechText, displayText));
 }
 
 function defaultIntent(app) {
