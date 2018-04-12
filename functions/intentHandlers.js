@@ -21,8 +21,8 @@ function welcomeIntent(app) {
   var ref = admin.database().ref('/requests');
   return ref.orderByChild("room").equalTo(room).once('value', function(snapshot) {
     if(snapshot.val() === null) {
-      speechText = repromptText = '<p><s> Good ' + utilities.getGreetingTime(moment().tz('Asia/Kolkata')) + ' ' 
-        + utilities.customers[room] + '.' + utilities.HelpMessage + '</s></p>';
+      speechText = repromptText = '<p><s> Good ' + utilities.getGreetingTime(moment().tz('Asia/Kolkata')) 
+        + utilities.customers[room] + '. ' + utilities.HelpMessage + '</s></p>';
       displayText = speechText;
     } else {
       speechText = repromptText = '<p><s>' + utilities.welcomeMessageReturn + utilities.HelpMessage + '</s></p>';
